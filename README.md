@@ -92,3 +92,42 @@ INSERT INTO LINE VALUES(1008,3,'23109-HB',1,   9.95);
 SQL> START LOADTBL_LNAME.SQL
 
 ***Loads data into database***
+
+
+and additional tables were created and the tables were loaded with data
+
+CREATE TABLE PRODMASTER (
+PROD_ID 	VARCHAR(10) NOT NULL,
+P_DESC   	VARCHAR(35) NOT NULL,
+P_QOH 	  	NUMBER NOT NULL,
+PRIMARY KEY (PROD_ID));   
+
+
+CREATE TABLE PRODSALES (
+PROD_ID         VARCHAR2(10) NOT NULL,
+PS_QTY 	  	NUMBER NOT NULL,
+PRIMARY KEY (PROD_ID)); 
+
+
+SQL> start createtbl_prod.sql;
+Table created.
+Table created.
+
+  
+
+/* PRODMASTER					*/
+INSERT INTO PRODMASTER VALUES('A123','SCREWS',60);
+INSERT INTO PRODMASTER VALUES('BX34','NUTS',37);
+INSERT INTO PRODMASTER VALUES('C563','BOLTS',50);
+
+
+/* PRODSALES					*/
+INSERT INTO PRODSALES VALUES('A123',7);
+INSERT INTO PRODSALES VALUES('BX34',3);
+
+SQL> start loadtbl_prod.sql;
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
